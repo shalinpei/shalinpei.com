@@ -4,7 +4,9 @@ html, body {
     width: 100%; height: 100%;
 }
 body {
+    display: -webkit-flex;
     display: flex;
+    -webkit-justify-content: center;
     justify-content: center;
 
     color: rgba(256,256,256,0.9); background: #9D0F47;
@@ -48,6 +50,7 @@ li {
 
 @media only screen and (min-width: 640px) {
     body {
+        -webkit-align-items: center;
         align-items: center;
     }
     section {
@@ -59,9 +62,13 @@ li {
         font-size: 80px;
     }
     ul {
+        display: -webkit-flex;
         display: flex;
+        -webkit-flex-direction: row;
         flex-direction: row;
+        -webkit-align-items: center;
         align-items: center;
+        -webkit-justify-content: space-between;
         justify-content: space-between;
 
         font-size: 16px;
@@ -83,27 +90,44 @@ li {
         top:0; left:0;
         width:100%; height: 100%;
 
+        display: -webkit-flex;
         display: flex;
+        -webkit-flex-flow: column nowrap;
         flex-flow: column nowrap;
+        -webkit-justify-content: center;
         justify-content: center;
+        -webkit-align-items: stretch;
         align-items: stretch;
+        -webkit-align-content: stretch;
         align-content: stretch;
     }
     .row {
+        -webkit-flex: 1;
         flex: 1;
 
+        display: -webkit-flex;
         display: flex;
+        -webkit-flex-flow: row nowrap;
         flex-flow: row nowrap;
+        -webkit-align-items: stretch;
         align-items: stretch;
+        -webkit-align-content: stretch;
         align-content: stretch;
     }
     .col {
+        -webkit-flex: 1;
         flex: 1;
         display: none;
     }
 
-    .col:nth-child(2) { display: flex; }
-    .col:nth-child(3) { display: flex; }
+    .col:nth-child(2) {
+        display: -webkit-flex;
+        display: flex;
+    }
+    .col:nth-child(3) {
+        display: -webkit-flex;
+        display: flex;
+    }
 }
 @media only screen and (min-width: 960px) {
     h1 {
@@ -113,7 +137,10 @@ li {
         font-size: 18px;
     }
 
-    .col:nth-child(4) { display: flex; }
+    .col:nth-child(4) {
+        display: -webkit-flex;
+        display: flex;
+    }
 }
 @media only screen and (min-width: 1280px) {
     h1 {
@@ -123,8 +150,14 @@ li {
         font-size: 24px;
     }
 
-    .col:nth-child(5) { display: flex; }
+    .col:nth-child(5) {
+        display: -webkit-flex;
+        display: flex;
+    }
 }
 @media only screen and (min-width: 1600px) {
-    .col:nth-child(1) { display: flex; }
+    .col:nth-child(1) {
+        display: -webkit-flex;
+        display: flex;
+    }
 }

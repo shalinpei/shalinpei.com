@@ -23,6 +23,18 @@
       ga('create', 'UA-3969370-1', 'auto');
       ga('send', 'pageview');
 
+    /**
+    * Function that tracks a click on an outbound link in Google Analytics.
+    * This function takes a valid URL string as an argument, and uses that URL string
+    * as the event label.
+    */
+    var trackOutboundLink = function(url) {
+       ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
+         function () {
+         document.location = url;
+         }
+       });
+    }
     </script>
 </head>
 
@@ -30,10 +42,10 @@
     <section>
         <h1>Shalin Pei</h1>
         <ul>
-            <li><a href="https://www.facebook.com/shalin.pei">Facebook</a></li>
-            <li><a href="https://twitter.com/shalinpei">Twitter</a></li>
-            <li><a href="https://www.linkedin.com/in/shalinpei">LinkedIn</a></li>
-            <li><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%6D%65%40%73%68%61%6C%69%6E%70%65%69%2E%63%6F%6D">E-mail</a></li>
+            <li><a href="https://www.facebook.com/shalin.pei" onclick=”trackOutboundLink(‘https://www.facebook.com/shalin.pei’); return false;">Facebook</a></li>
+            <li><a href="https://twitter.com/shalinpei" onclick=”trackOutboundLink(‘https://twitter.com/shalinpei’); return false;">Twitter</a></li>
+            <li><a href="https://www.linkedin.com/in/shalinpei" onclick=”trackOutboundLink(‘https://www.linkedin.com/in/shalinpei’); return false;">LinkedIn</a></li>
+            <li><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%6D%65%40%73%68%61%6C%69%6E%70%65%69%2E%63%6F%6D" onclick=”trackOutboundLink(‘&#109;&#97;&#105;&#108;&#116;&#111;&#58;%6D%65%40%73%68%61%6C%69%6E%70%65%69%2E%63%6F%6D’); return false;">E-mail</a></li>
         </ul>
     </section>
     <div class="bg">
